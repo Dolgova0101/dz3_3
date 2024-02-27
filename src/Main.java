@@ -2,10 +2,12 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-           CreditPaymentService service = new CreditPaymentService();
-            double payment = service.calculate(1_000_000,3, 9.99);
+        CreditPaymentService service = new CreditPaymentService();
+        double years = 2;
+        double sam = 1_000_000;
+        double payment = service.calculate (sam,years,9.99);
 
 
-        System.out.println("Ежемесячный платеж: " + Math.round(payment));
-    }
+        System.out.println("Ежемесячный платеж: "+Math.round(payment));
+}
   }

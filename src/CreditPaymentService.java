@@ -1,18 +1,18 @@
 public class CreditPaymentService {
     public double calculate(double sam, double years, double percent) {
         double p = percent / 100 / 12;
+        double a = years;
         if (years == 1) {
-            double payment = (p * Math.pow((1 + p), 12) / ((Math.pow((1 + p), 12) - 1))) * sam;
-            return payment;
-
+            a = 12;
         } else if (years == 2) {
-            double payment = (p * Math.pow((1 + p), 24) / ((Math.pow((1 + p), 24) - 1))) * sam;
-            return payment;
+            a = 24;
         } else {
-            double payment = (p * Math.pow((1 + p), 36) / ((Math.pow((1 + p), 36) - 1))) * sam;
-            return payment;
-
+            a = 36;
         }
+        double b = sam;
+
+        double payment = (p * Math.pow((1 + p), a) / ((Math.pow((1 + p), a) - 1))) * b;
+        return payment;
 
 
     }
